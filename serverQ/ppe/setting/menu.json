@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Home",
+    "checked": true
+  },
+  {
+    "name": "Report",
+    "checked": true,
+    "children": [
+      {
+        "name": "Template-1",
+        "checked": true
+      },
+      {
+        "name": "Template-3",
+        "checked": true
+      },
+      {
+        "name": "Template-4",
+        "checked": true
+      },
+      {
+        "name": "Template-5",
+        "checked": true
+      },
+      {
+        "name": "Template-13",
+        "checked": true
+      },
+      {
+        "name": "Template-17",
+        "checked": true
+      },
+      {
+        "name": "Template-19",
+        "checked": true
+      },
+      {
+        "name": "Template-20",
+        "checked": true
+      },
+      {
+        "name": "Template-21",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "name": "Setting",
+    "checked": true,
+    "children": [
+      {
+        "name": "Add-Remove user",
+        "checked": true
+      },
+      {
+        "name": "Branch config",
+        "checked": true
+      }
+    ]
+  }
+]
+

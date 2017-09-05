@@ -1,0 +1,91 @@
+
+<!-- <md-content class="md-padding"> -->
+  <md-card md-theme-watch flex-gt-sm="60" flex>
+    <md-card-content>
+      <canvas id="grapReportCombo"></canvas>
+    </md-card-content>
+  </md-card>
+
+
+  <div grid-data id='reportGridTemplate' grid-options="reportGridTemplate" grid-actions="reportGridActions">
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="orderIdFilter">Search by ID #</label>
+          <input id="orderIdFilter" type="text" class="form-control order-search-box"
+                 placeholder="Enter ID #"
+                 ng-change="reportGridActions.filter()"
+                 ng-model="branchID"
+                 filter-by="branchID"
+                 filter-type="text">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <span class="items">{{filtered.length}} items total</span>
+      </div>
+      <div class="col-md-9 text-right">
+        <form class="form-inline pull-right margin-bottom-basic">
+          <div class="form-group">
+            <grid-pagination max-size="5"
+                             boundary-links="true"
+                             class="pagination-sm"
+                             total-items="paginationOptions.totalItems"
+                             ng-model="paginationOptions.currentPage"
+                             ng-change="reloadGrid()"
+                             items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+          </div>
+          <div class="form-group items-per-page">
+            <label for="itemsOnPageSelect1">Items per page:</label>
+            <select id="itemsOnPageSelect1" class="form-control input-sm" ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+              <option>75</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <table class="table table-striped">  
+      <thead>
+        <tr ng-repeat="line in tableHeader">
+          <th ng-repeat="header in line" 
+              rowspan="{{ header.rowSpan }}" 
+              colspan="{{ header.colSpan }}" 
+              style="text-align: {{header.align}};">{{ header.headText }}</th>
+        </tr>
+      </thead>
+
+      <tbody grid-item>
+        <!-- <tr style="text-align: center;">  -->
+        <tr> 
+          <td width="{{item.idSpan}}" ng-bind="item.branchID" style="color: {{item.idColor}}"></td>
+          <td width="{{item.nameSpan}}" ng-bind="item.branchName" style="color: {{item.nameColor}}"></td> 
+          <!-- <td ng-repeat="one in item.firstLine track by $index" colspan="{{one.colSpan}}" ng-bind="one.value"></td> -->
+          <td ng-repeat="one in item.firstLine track by $index" ng-bind="one"></td>
+        </tr>
+        <!-- <tr ng-repeat="one in item.data track by $index" style="text-align: center;">  -->
+        <tr ng-repeat="one in item.data track by $index"> 
+          <td colspan="2" ng-bind="one.text" style="color: {{one.dColor}}; text-align: {{one.align}};"></td>
+          <td ng-repeat="two in one.value track by $index" ng-bind="two" style="color: {{one.dColor}}; text-align: center;"></td>
+        </tr >
+      </tbody> 
+
+    </table>
+
+  </div>
+
+<!-- </md-content> -->
+
+
+
+
+
+
+
+
