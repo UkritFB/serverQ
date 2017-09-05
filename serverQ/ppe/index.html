@@ -52,7 +52,7 @@
 
 
     <md-content flex layout="column" class="md-padding" layout-align="start center"> 
-      <div ui-view style="width: 1024px;"></div>      
+      <div ui-view style="width: 100%;height: 100%"></div>      
     </md-content>
 <!-- <div layout="column" layout-align="center center">
     <md-content flex style="width: 1024px;">
@@ -60,13 +60,17 @@
     </md-content>
 </div> --> 
 
+
+
+
+
  <md-sidenav class="md-sidenav-left md-whiteframe-z2"
     md-component-id="right">
 
   <md-toolbar layout="row" >
    <div class="md-toolbar-tools">
         <h2>
-          <span>Setting</span>
+          <span>ตั่งค่า</span>
         </h2>
         <span flex></span>
         <md-button class="md-icon-button" aria-label="Close setting panel" ng-click="ctrl.toggleRight()">
@@ -81,7 +85,7 @@
     <md-menu-item>
       <md-button ng-disabled="ctrl.addRemoveUser" ng-click="ctrl.toggleRight(); gotoMenu('setuser')">
         <md-icon md-svg-icon="images/add-user-button.svg"></md-icon>
-        User
+        ผู้ใช้
       </md-button>
     </md-menu-item>
 
