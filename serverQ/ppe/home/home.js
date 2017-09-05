@@ -4,19 +4,6 @@
 // config controller 
 */
 angular.module('myApp')
-.controller('SwitchDemoCtrl', function($scope) {
-  $scope.data = {
-    cb1: true,
-    cb4: true,
-    cb5: false
-  };
-
-  $scope.message = 'false';
-
-  $scope.onChange = function(cbState) {
-    $scope.message = cbState;
-  };
-});
 .controller('homeCtrl', function($scope, $state, $mdDialog, $timeout, $interval, appService) {
 // $timeout(function() {
 
