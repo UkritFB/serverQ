@@ -1,5 +1,4 @@
 var lib = require('./serverLib.js');
-
 // var emitter = new lib.SimpleEE();
 var emitter = lib.emitter;
 
