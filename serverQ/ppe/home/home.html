@@ -2,20 +2,19 @@
 
   <md-input-container>
 
+    <label>From</label>
+    <md-datepicker ng-model="startDate" name="dateFieldStart" md-min-date="minDateStart" md-max-date="maxDateStart" ng-change="dateChange(startDate);"></md-datepicker>
+    <div ng-messages="myOtherForm.dateField.$error">
+      <div ng-message="valid">The entered value is not a date!</div>
+      <div ng-message="required">This date is required!</div>
+      <div ng-message="mindate">Date is too early!</div>
+      <div ng-message="maxdate">Date is too late!</div>
+    </div>
+  </md-input-container>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- <h2>Dashboard</h2> -->
+ <!-- <button id="randomizeData">Randomize Data</button> -->
+ 
 
 <div class="inset" ng-controller="SwitchDemoCtrl" ng-cloak>
   <md-switch ng-model="data.cb1" aria-label="Switch 1">
@@ -47,32 +46,6 @@
   </md-switch>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <label>From</label>
-    <md-datepicker ng-model="startDate" name="dateFieldStart" md-min-date="minDateStart" md-max-date="maxDateStart" ng-change="dateChange(startDate);"></md-datepicker>
-    <div ng-messages="myOtherForm.dateField.$error">
-      <div ng-message="valid">The entered value is not a date!</div>
-      <div ng-message="required">This date is required!</div>
-      <div ng-message="mindate">Date is too early!</div>
-      <div ng-message="maxdate">Date is too late!</div>
-    </div>
-  </md-input-container>
-
-  <!-- <h2>Dashboard</h2> -->
- <!-- <button id="randomizeData">Randomize Data</button> -->
 
   <div layout-gt-sm="row" layout-align="space-between start">    
 
